@@ -1,4 +1,12 @@
-use crate::{data_store::controllers::user::{create_user_on_db, get_user_by_id_on_db, get_user_by_username_on_db, update_user_on_db}, models::{dto::user::{CreateUserDto, UpdateUserDto}, user::UserModel}, server::models::jwt::JWToken, UserLoginDto, UserSidninDto};
+use crate::{
+    data_store::controllers::user::{
+        create_user_on_db, get_user_by_id_on_db, get_user_by_username_on_db, update_user_on_db
+    }, models::{
+
+        dto::user::{CreateUserDto, UpdateUserDto, UserLoginDto, UserSidninDto}, user::UserModel
+    }, 
+    server::models::jwt::JWToken,
+};
 
 pub struct UserService{}
 

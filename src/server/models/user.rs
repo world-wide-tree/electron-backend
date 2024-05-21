@@ -1,6 +1,6 @@
 use serde::Deserialize;
 
-use crate::{UserLoginDto, UserSidninDto};
+use crate::models::dto::user::{UserLoginDto, UserSidninDto};
 
 #[derive(Debug, Deserialize)]
 pub struct UserLogin{

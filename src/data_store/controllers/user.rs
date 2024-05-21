@@ -1,4 +1,15 @@
-use crate::{data_store::{db_pool, models::{dto::user::{CreateUserSurreal, UpdateUserSurreal}, user::UserSurreal}}, models::{dto::user::{CreateUserDto, UpdateUserDto}, user::UserModel}, UserLoginDto, UserSidninDto};
+use crate::{
+    data_store::{
+        db_pool, models::{
+            dto::user::{CreateUserSurreal, UpdateUserSurreal}, 
+            user::UserSurreal
+        }
+    }, 
+    models::{
+        dto::user::{CreateUserDto, UpdateUserDto}, 
+        user::UserModel
+    }
+};
 
 pub static USER_TABLE: &'static str = "users";
 
@@ -46,8 +57,8 @@ pub async fn get_user_by_username_on_db(
     username: String
 ) -> UserModel{
     let query = format!(
-        "SELECT * FROM {} WHERE user_name = {}",
-        USER_TABLE,
+        "SELECT * FROM users WHERE user_name = \"{}\";",
+        // USER_TABLE,
         username
     );
     let mut rst = db_pool()
@@ -56,9 +67,10 @@ pub async fn get_user_by_username_on_db(
         .await
         .expect("Error of selecting user by username!")
     ;
-    let rst: Option<UserSurreal> = rst.take(0)
+    let mut rst: Vec<UserSurreal> = rst.take(0)
         .expect("Error of selecting user by username!")
     ;
-    rst.expect("User Not found!")
+    rst.pop()
+        .expect("User Not found!")
         .into()
 }

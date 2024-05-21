@@ -9,6 +9,9 @@ pub struct UserSurreal{
     
     user_name: String,
     password: String,
+    first_name: String,
+    last_name: String,
+    phone_number: String,
 }
 
 impl Into<UserModel> for UserSurreal{
@@ -16,7 +19,10 @@ impl Into<UserModel> for UserSurreal{
         UserModel { 
             id: self.id.id.to_string(), 
             user_name: self.user_name, 
-            password: self.password 
+            password: self.password,
+            first_name: self.first_name,
+            last_name: self.last_name,
+            phone_number: self.phone_number
         }
     }
 }
@@ -26,7 +32,10 @@ impl From<UserModel> for UserSurreal{
         Self { 
             id: Thing::from((USER_TABLE, value.id.as_str())), 
             user_name: value.user_name, 
-            password: value.password
+            password: value.password,
+            first_name: value.first_name,
+            last_name: value.last_name,
+            phone_number: value.phone_number
         }
     }
 }
