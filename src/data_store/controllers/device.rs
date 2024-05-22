@@ -60,7 +60,7 @@ pub async fn list_device_on_db(
     page: $offset,
     items: $rst 
 };";
-    let rst: Option<PaginationDb<DeviceModel>> = db_pool()
+    let rst: Option<PaginationDb<DeviceSurreal>> = db_pool()
         .query(query0)
         .query(query1)
         .query(query2)
