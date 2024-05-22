@@ -23,3 +23,14 @@ impl From<SubstationModel> for SubstationSurreal{
         }
     }
 }
+impl Into<SubstationModel> for SubstationSurreal{
+    fn into(self) -> SubstationModel {
+        SubstationModel { 
+            id: self.id.id.to_string(), 
+            code: self.code, 
+            latitude: self.latitude, 
+            longitude: self.longitude, 
+            max_power: self.max_power 
+        }
+    }
+}
