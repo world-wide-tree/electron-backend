@@ -5,13 +5,13 @@ use crate::models::room::RoomTypeModel;
 #[derive(Debug, Serialize, Deserialize)]
 pub struct CreateRoomDto{
     pub name: String,
-    pub hame: String, // id of house
+    pub home: String, // id of house
     pub rtype: RoomTypeModel
 }
 #[derive(Debug, Serialize, Deserialize)]
 pub struct UpdateRoomDto{
     pub name: String,
-    pub hame: String, // id of house
+    pub home: String, // id of house
     pub rtype: RoomTypeModel
 }
 #[derive(Debug, Serialize, Deserialize)]
