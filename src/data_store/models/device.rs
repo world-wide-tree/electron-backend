@@ -5,17 +5,17 @@ use crate::{data_store::controllers::{device::{DEVICE_TABLE, DEVICE_TYPE_TABLE},
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct DeviceSurreal{
-    id: Thing,
-    name: String,
-    state: bool,
-    room: Thing,
-    dtype: DeviceTypeSurreal
+    pub id: Thing,
+    pub name: String,
+    pub state: bool,
+    pub room: Thing,
+    pub dtype: DeviceTypeSurreal
 }
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct DeviceTypeSurreal{
-    id: Thing,
-    name: String
+    pub id: Thing,
+    pub name: String
 }
 
 impl Into<DeviceModel> for DeviceSurreal{

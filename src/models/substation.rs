@@ -1,11 +1,11 @@
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Serialize, Deserialize)]
-pub struct Substation{
-    id: String,
-    code: String, // unique code of substation
-    latitude: u64,
-    longitude: u64,
-    max_power: i64
+pub struct SubstationModel{
+    pub id: String,
+    pub code: String, // unique code of substation
+    pub latitude: f64,
+    pub longitude: f64,
+    pub max_power: u64
 
 }

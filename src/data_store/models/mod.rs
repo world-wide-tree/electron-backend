@@ -5,4 +5,5 @@ pub mod room;
 pub mod device;
 
 pub mod dto;
+pub mod schema;
 pub mod pagination;

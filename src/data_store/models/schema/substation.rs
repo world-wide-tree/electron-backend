@@ -4,7 +4,7 @@ use surrealdb::sql::Thing;
 use crate::{data_store::controllers::substation::SUBSTATION_TABLE, models::substation::SubstationModel};
 
 #[derive(Debug, Serialize, Deserialize)]
-pub struct SubstationSurreal{
+pub struct SubstationSurrealSchema{
     id: Thing,
     code: String, // unique code of substation
     latitude: f64,
@@ -12,7 +12,7 @@ pub struct SubstationSurreal{
     max_power: u64
 }
 
-impl From<SubstationModel> for SubstationSurreal{
+impl From<SubstationModel> for SubstationSurrealSchema{
     fn from(value: SubstationModel) -> Self {
         Self { 
             id: Thing::from((SUBSTATION_TABLE, value.id.as_str())), 
