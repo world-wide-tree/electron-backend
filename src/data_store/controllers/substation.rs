@@ -1,0 +1,1 @@
+pub static SUBSTATION_TABLE: &'static str = "Substation";

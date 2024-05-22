@@ -2,14 +2,15 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct RoomModel{
-    name: String,
-    house: String, // id of house
-    rtype: String
+    pub id: String,
+    pub name: String,
+    pub hame: String, // id of house
+    pub rtype: RoomTypeModel
 }
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct RoomTypeModel{
-    id: String,
-    name: String,
-    image: String // Path of image
+    pub id: String,
+    pub name: String,
+    pub image: String // Path of image
 }

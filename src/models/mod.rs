@@ -6,3 +6,4 @@ pub mod device;
 pub mod jwtoken;
 
 pub mod dto;
+pub mod pagination;

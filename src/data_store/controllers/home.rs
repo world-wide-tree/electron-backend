@@ -1,0 +1,1 @@
+pub static HOME_TABLE: &'static str = "Home";
