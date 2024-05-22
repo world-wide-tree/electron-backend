@@ -11,6 +11,7 @@ pub mod room_type;
 pub mod device;
 pub mod device_type;
 pub mod home;
+pub mod substation;
 
 pub async fn user_login_handler(
     State(state): State<Arc<AppState>>,
