@@ -35,7 +35,6 @@ pub fn api_router(state: Arc<AppState>) -> Router{
         .nest(API_ROOT_PATH, room_type_router())
         .nest(API_ROOT_PATH, substation_router())
         .nest(API_ROOT_PATH, home_router())
-        .nest(API_ROOT_PATH, panel_router())
         .with_state(state)
     ;
 
