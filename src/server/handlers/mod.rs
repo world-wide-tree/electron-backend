@@ -6,6 +6,12 @@ use crate::service::app_state::AppState;
 
 use super::models::{jwt::JWToken, user::{UserLogin, UserSignin}};
 
+pub mod room;
+pub mod room_type;
+pub mod device;
+pub mod device_type;
+pub mod home;
+
 pub async fn user_login_handler(
     State(state): State<Arc<AppState>>,
     Json(body): Json<UserLogin>,
