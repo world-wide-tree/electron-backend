@@ -6,7 +6,7 @@ pub static HOME_TABLE: &'static str = "Home";
 
 pub async fn create_home_on_db(
     dto: CreateHomeDto
-) -> HomeSurreal{
+) -> HomeModel{
     let rst: HomeSurreal = db_pool()
         .create(HOME_TABLE)
         .content(CreateHomeSurreal::from(dto))
@@ -18,7 +18,7 @@ pub async fn create_home_on_db(
     rst.into()
 }
 
-pub async fn update_device_on_db(
+pub async fn update_home_on_db(
     id: String,
     dto: UpdateHomeDto
 ) -> HomeModel{

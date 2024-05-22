@@ -75,7 +75,7 @@ pub async fn list_device_on_db(
     rst.map(PaginationDb::into).expect("Not Result returner when selected Device")
 }
 
-pub async fn delete_device_by_id(
+pub async fn delete_device_by_id_on_db(
     id: String
 ) -> (){
     let rst: DeviceModel = db_pool()
