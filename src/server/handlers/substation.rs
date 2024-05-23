@@ -15,7 +15,7 @@ pub async fn post_substation_handler(
     State(state): State<Arc<AppState>>,
     Json(body): Json<PostSubstationSDto>,
 ) -> impl IntoResponse{
-    let rst = state.substation().post_substation(body).await;
+    let rst = state.substation().post_substation(body.into()).await;
     (StatusCode::OK, Json(SubstationSDto::from(rst)))
 }
 pub async fn get_substation_by_id_handler(
