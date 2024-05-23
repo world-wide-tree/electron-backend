@@ -25,7 +25,7 @@ impl From<RoomModel> for RoomSurrealSchema{
         Self { 
             id: Thing::from((ROOM_TABLE, value.id.as_str())), 
             name: value.name, 
-            home: Thing::from((HOME_TABLE, value.hame.as_str())), 
+            home: Thing::from((HOME_TABLE, value.home.as_str())), 
             rtype: Thing::from((ROOM_TYPE_TABLE, value.rtype.id.as_str())), 
         }
     }

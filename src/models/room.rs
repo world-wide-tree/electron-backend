@@ -4,7 +4,7 @@ use serde::{Deserialize, Serialize};
 pub struct RoomModel{
     pub id: String,
     pub name: String,
-    pub hame: String, // id of house
+    pub home: String, // id of house
     pub rtype: RoomTypeModel
 }
 

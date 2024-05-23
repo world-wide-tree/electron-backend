@@ -24,7 +24,7 @@ impl Into<RoomModel> for RoomSurreal{
         RoomModel { 
             id: self.id.id.to_string(), 
             name: self.name, 
-            hame: self.home.id.to_string(), 
+            home: self.home.id.to_string(), 
             rtype: self.rtype.into() 
         }
     }
@@ -35,7 +35,7 @@ impl From<RoomModel> for RoomSurreal{
         Self { 
             id: Thing::from((ROOM_TABLE, value.id.as_str())), 
             name: value.name, 
-            home: Thing::from((HOME_TABLE, value.hame.as_str())), 
+            home: Thing::from((HOME_TABLE, value.home.as_str())), 
             rtype: RoomTypeSurreal::from(value.rtype)
         }
     }

@@ -1,4 +1,4 @@
-use crate::{data_store::controllers::substation::{create_substation_on_db, get_substation_by_id_on_db, list_substation_on_db, update_substation_on_db}, models::{dto::substation::{CreateSubstationDto, UpdateSubstationDto}, pagination::Pagination, query_params::substation::SubstationQueryParams, substation::SubstationModel}};
+use crate::{data_store::controllers::substation::{create_substation_on_db, delete_substation_by_id_on_db, get_substation_by_id_on_db, list_substation_on_db, update_substation_on_db}, models::{dto::substation::{CreateSubstationDto, UpdateSubstationDto}, pagination::Pagination, query_params::substation::SubstationQueryParams, substation::SubstationModel}};
 
 pub struct SubstationService{}
 
@@ -20,6 +20,10 @@ impl SubstationService {
     }
     pub async fn get_all_substation(&self, params: SubstationQueryParams) -> Pagination<SubstationModel>{
         let rst = list_substation_on_db(params).await;
+        rst
+    }
+    pub async fn delete_substation_by_id(&self, id: String) -> (){
+        let rst = delete_substation_by_id_on_db(id).await;
         rst
     }
 }
